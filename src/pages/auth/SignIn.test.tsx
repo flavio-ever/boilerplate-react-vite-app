@@ -3,8 +3,8 @@ const signInMock = vi.fn().mockImplementation((...args) => {
   return Promise.resolve(void 0);
 });
 
-vi.mock('../../auth/UseAuthContext', () => ({
-  useAuth: vi.fn(() => ({
+vi.mock('../../auth/UseAuth', () => ({
+  UseAuth: vi.fn(() => ({
     signIn: signInMock,
   })),
 }));
@@ -12,8 +12,8 @@ vi.mock('../../auth/UseAuthContext', () => ({
 import { vi, it, expect, describe, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import SignIn from './SignIn';
-import { useAuth } from '../../auth/UseAuthContext';
 import userEvent from '@testing-library/user-event';
+import { UseAuth } from '../../auth/UseAuth';
 
 beforeEach(() => {
   signInMock.mockClear();
@@ -22,7 +22,7 @@ beforeEach(() => {
 describe('SignIn Component Tests', () => {
   it('test mock setup', () => {
     render(<SignIn />);
-    expect(useAuth().signIn).not.toHaveBeenCalled();
+    expect(UseAuth().signIn).not.toHaveBeenCalled();
   });
 
   it('shows an error message when the email is not provided', async () => {
@@ -52,7 +52,7 @@ describe('SignIn Component Tests', () => {
     await userEvent.click(screen.getByRole('button', { name: /login em sua conta/i }));
 
     await vi.waitFor(() => {
-      const { signIn } = useAuth();
+      const { signIn } = UseAuth();
       expect(signIn).toHaveBeenCalled();
     });
   });

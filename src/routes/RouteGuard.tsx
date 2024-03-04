@@ -1,12 +1,12 @@
 import { Navigate, Outlet } from 'react-router-dom';
-import { useAuth } from '../auth/UseAuthContext';
+import { UseAuth } from '../auth/UseAuth';
 
 type RouteGuardProps = {
   isPrivate: boolean;
 };
 
 const RouteGuard: React.FC<RouteGuardProps> = ({ isPrivate }) => {
-  const { user } = useAuth();
+  const { user } = UseAuth();
 
   const isAuthenticated = () => {
     return !!user;

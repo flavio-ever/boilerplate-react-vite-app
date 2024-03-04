@@ -1,7 +1,7 @@
-import { useAuth } from '../auth/UseAuthContext';
+import { UseAuth } from '../auth/UseAuth';
 
 const Home: React.FC = () => {
-  const { user } = useAuth();
+  const { user } = UseAuth();
 
   return (
     <>

@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useCallback } from 'react';
-import { useAuth } from '../../auth/UseAuthContext';
+import { UseAuth } from '../../auth/UseAuth';
 
 const validationSchema = z.object({
   email: z.string().email({ message: 'O campo e-mail é obrigatório' }),
@@ -12,7 +12,7 @@ const validationSchema = z.object({
 type ValidationSchema = z.infer<typeof validationSchema>;
 
 const SignIn: React.FC = () => {
-  const { signIn } = useAuth();
+  const { signIn } = UseAuth();
   const {
     register,
     handleSubmit,

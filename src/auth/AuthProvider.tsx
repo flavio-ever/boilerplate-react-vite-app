@@ -1,8 +1,9 @@
-import React, { createContext, useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { jwtDecode } from 'jwt-decode'; // Corrigido
 import { toast } from 'react-toastify';
-
 import api from '../services/api.service';
+
+import { SignInCredentials, AuthContext } from './AuthContext';
 
 type AuthProviderProps = {
   children: React.ReactNode;
@@ -13,18 +14,6 @@ type AuthState = {
   role: string;
 };
 
-type SignInCredentials = {
-  email: string;
-  password: string;
-};
-
-export type AuthContextProps = {
-  user: AuthState | null;
-  // eslint-disable-next-line no-unused-vars
-  signIn(credentials: SignInCredentials): Promise<void>;
-  signOut(): void;
-};
-
 type AuthPayloadResponseDTO = {
   userId: string;
   companyId: string;
@@ -32,8 +21,6 @@ type AuthPayloadResponseDTO = {
   type: 'token' | 'refresh-token';
   role: string;
 };
-
-export const AuthContext = createContext<AuthContextProps | null>(null);
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [user, setUser] = useState<AuthState | null>(() => {
