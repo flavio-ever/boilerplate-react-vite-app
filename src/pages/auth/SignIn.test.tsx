@@ -11,8 +11,8 @@ vi.mock('../../auth/UseAuthContext', () => ({
 
 import { vi, it, expect, describe, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import SignIn from './SignIn'; // Ajuste o caminho de importação conforme necessário
-import { useAuth } from '../../auth/UseAuthContext'; // Importa para poder verificar as chamadas
+import SignIn from './SignIn';
+import { useAuth } from '../../auth/UseAuthContext';
 import userEvent from '@testing-library/user-event';
 
 beforeEach(() => {

@@ -66,7 +66,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   }, []);
 
   const signOut = useCallback(() => {
-    localStorage.removeItem('@app:name'); // Corrigido para corresponder às chaves de armazenamento
+    localStorage.removeItem('@app:name');
     localStorage.removeItem('@app:role');
     localStorage.removeItem('@app:access_token');
     localStorage.removeItem('@app:refresh_token');
@@ -74,7 +74,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     setUser(null);
   }, []);
 
-  // Efeito para configurar interceptador de forma segura
   useEffect(() => {
     const interceptor = api.interceptors.response.use(
       (response) => response,
