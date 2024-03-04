@@ -10,17 +10,28 @@
     "preview": "vite preview",
     "prepare": "husky install",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
-    "test": "vitest"
+    "test": "vitest",
+    "test:watch": "vitest --ui",
+    "test:staged": "vitest related --run"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
       "pnpm lint --fix",
-      "prettier --write --ignore-unknown"
+      "prettier --write --ignore-unknown",
+      "pnpm test:staged"
     ]
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.3.4",
+    "@vitest/ui": "^1.3.1",
+    "axios": "^1.6.7",
+    "jwt-decode": "^4.0.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.0",
+    "react-router-dom": "^6.22.2",
+    "react-toastify": "^10.0.4",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.0.3",
