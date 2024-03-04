@@ -1,15 +1,3 @@
-// vi.mock('../../auth/UseAuthContext', () => ({
-//   useAuth: vi.fn(() => ({
-//     signIn: vi.fn(),
-//   })),
-// }));
-
-import { vi, it, expect, describe, beforeEach } from 'vitest';
-import { render, screen } from '@testing-library/react';
-import SignIn from './SignIn'; // Ajuste o caminho de importação conforme necessário
-import { useAuth } from '../../auth/UseAuthContext'; // Importa para poder verificar as chamadas
-import userEvent from '@testing-library/user-event';
-
 const signInMock = vi.fn().mockImplementation((...args) => {
   console.log('signInMock: args:', args);
   return Promise.resolve(void 0);
@@ -20,6 +8,12 @@ vi.mock('../../auth/UseAuthContext', () => ({
     signIn: signInMock,
   })),
 }));
+
+import { vi, it, expect, describe, beforeEach } from 'vitest';
+import { render, screen } from '@testing-library/react';
+import SignIn from './SignIn'; // Ajuste o caminho de importação conforme necessário
+import { useAuth } from '../../auth/UseAuthContext'; // Importa para poder verificar as chamadas
+import userEvent from '@testing-library/user-event';
 
 beforeEach(() => {
   signInMock.mockClear();
