@@ -1,14 +1,16 @@
-import { UseAuth } from '../auth/UseAuth';
+//import { UseAuth } from '../auth/UseAuth';
+import DashboardTemplate from '../templates/dashboard/DashboardTemplate';
 
 const Home: React.FC = () => {
-  const { user } = UseAuth();
+  //const { user } = UseAuth();
 
   return (
     <>
-      <div>
+      <DashboardTemplate />
+      {/* <div>
         <h1>{user?.name}</h1>
         <h1>{user?.role}</h1>
-      </div>
+      </div> */}
     </>
   );
 };

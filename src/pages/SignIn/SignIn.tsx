@@ -46,7 +46,7 @@ const SignIn: React.FC = () => {
               <input
                 type="email"
                 id="email"
-                className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white ${errors.password && 'border-red-500'}`}
+                className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white ${errors.password && 'border-red-500'}`}
                 placeholder="name@company.com"
                 {...register('email')}
               />
@@ -60,7 +60,7 @@ const SignIn: React.FC = () => {
                 type="password"
                 id="password"
                 placeholder="••••••••"
-                className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white ${errors.password && 'border-red-500'}`}
+                className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white ${errors.password && 'border-red-500'}`}
                 {...register('password')}
               />
               {errors.password && <p className="text-xs italic text-red-500 mt-2"> {errors.password?.message}</p>}
@@ -72,26 +72,26 @@ const SignIn: React.FC = () => {
                     id="remember"
                     type="checkbox"
                     value=""
-                    className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+                    className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-violet-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-violet-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
                   />
                 </div>
                 <label htmlFor="remember" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                   Lembrar-me
                 </label>
               </div>
-              <a href="#" className="ms-auto text-sm text-blue-700 hover:underline dark:text-blue-500">
+              <a href="#" className="ms-auto text-sm text-violet-700 hover:underline dark:text-violet-500">
                 Esqueceu a senha?
               </a>
             </div>
             <button
               type="submit"
-              className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="w-full text-white bg-violet-700 hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-violet-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-violet-800"
             >
               Login em sua conta
             </button>
             <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
               Não está registrado?{' '}
-              <a href="#" className="text-blue-700 hover:underline dark:text-blue-500">
+              <a href="#" className="text-violet-700 hover:underline dark:text-violet-500">
                 Criar conta
               </a>
             </div>

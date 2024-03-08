@@ -1,7 +1,7 @@
 import { Route, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 import ErrorPage from '../pages/Error';
 import Home from '../pages/Home';
-import Login from '../pages/auth/SignIn';
+import Login from '../pages/SignIn/SignIn';
 import RouteGuard from './RouteGuard';
 
 const router = createBrowserRouter(
